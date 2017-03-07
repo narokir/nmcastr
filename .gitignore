@@ -14,7 +14,7 @@
 !/tmp/.keep
 
 #Ignore secrets
-/config/secrets.yml
+#/config/secrets.yml # heroku does not like this
 
 # Ignore Byebug command history file.
 .byebug_history
