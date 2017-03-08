@@ -1,0 +1,8 @@
+<div class="center-block clearfix">
+<% flash.each do |type, message| %>
+  <div class="alert <%= bootstrap_class_for(type) %>  fade in col-md-6 col-md-offset-3">
+    <button class="close" data-dismiss="alert">×</button>
+    <%= message.html_safe %>
+  </div>
+<% end %>
+</div>

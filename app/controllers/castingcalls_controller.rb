@@ -20,6 +20,7 @@ class CastingcallsController < ApplicationController
     @castingcall = Castingcall.new(castingcall_params)
     
     if @castingcall.save
+      flash[:success] = "Success!<strong> #{@castingcall.title}</strong> has been created!" 
       redirect_to @castingcall
     else
       render 'new'
@@ -30,6 +31,7 @@ class CastingcallsController < ApplicationController
     @castingcall = Castingcall.find(params[:id])
     
     if @castingcall.update(castingcall_params)
+      flash[:success] = "Success! <strong>#{@castingcall.title}</strong> has been Updated"
       redirect_to @castingcall
     else
       render 'edit'
@@ -40,6 +42,7 @@ class CastingcallsController < ApplicationController
     @castingcall = Castingcall.find(params[:id])
     
     @castingcall.destroy
+    flash[:success] = "Success! <strong>#{@castingcall.title}</strong> has been Deleted"
     redirect_to castingcalls_path
   end
   

@@ -2,3 +2,43 @@
 <p>
   The time is now: <%= Time.now %>
 </p>
+
+<div class="jumbotron">
+  <div class="container">
+     <h1>Casting calls. Answer.</h1>
+  <p>Welcome to New Mexico's largest network of background Actors.</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign Up</a></p>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <% @castingcalls.each do |castingcall| %>
+      <div class="col-md-4">
+        <div class="panel">
+          <%# image_tag casting_call.image.thumb.url,class: "img-responsive"  %>
+          <div class="panel-body">
+          
+            <!--<img class="img-responsive center-block" src="https://placehold.it/1000x500" alt="Responsive image">-->
+            <h4 class="card-title"><%= castingcall.title %></h4>
+            <p class='small'> Posted by: <%# link_to casting_call.user.email, casting_call.user	%></p>
+            <p class="card-text"><%= truncate(castingcall.description, length: 120) %></p>
+            <%= link_to "View Details", castingcall_path(castingcall), class: 'btn btn-info btn-sm'  %>
+          
+          </div>
+          
+          <% if user_signed_in? %>
+            <div class="panel-footer">
+              <span class= "small"><%= link_to "Show", castingcall_path(castingcall) %> |
+              <%= link_to "Edit", edit_castingcall_path(castingcall) %> |
+              <%= link_to "Delete", castingcall_path(castingcall), method: :delete, data: { confirm: "Are you sure?" } %></span>
+            </div>
+          <% else %>
+          
+          <% end %>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>

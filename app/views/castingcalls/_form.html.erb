@@ -1,5 +1,5 @@
 <%= simple_form_for(@castingcall, html: {multipart: true}) do |f| %>
- <%# render 'shared/form_errors', object: f.object %>
+ <%= render 'shared/form_errors', object: f.object %>
    <%= f.input :title %>
    <%= f.input :description %>
    <div class="panel clearfix">
