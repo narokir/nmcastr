@@ -1,38 +1,38 @@
 require 'test_helper'
 
-class CastingcallsControllerTest < ActionDispatch::IntegrationTest
+class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get castingcalls_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_castingcall_path
-    assert_response :success
-  end
-
-  test "should get create" do
-    post castingcalls_path
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_castingcall
+    get users_index_url
     assert_response :success
   end
 
   test "should get show" do
-    get castingcall_path
+    get users_show_url
+    assert_response :success
+  end
+
+  test "should get new" do
+    get users_new_url
+    assert_response :success
+  end
+
+  test "should get edid" do
+    get users_edid_url
+    assert_response :success
+  end
+
+  test "should get create" do
+    get users_create_url
     assert_response :success
   end
 
   test "should get update" do
-    get edit_castingcall_path
+    get users_update_url
     assert_response :success
   end
 
   test "should get destroy" do
-    delete castingcall_path
+    get users_destroy_url
     assert_response :success
   end
 

@@ -1,4 +1,6 @@
 class CastingcallsController < ApplicationController
+  
+  
   def index
     @castingcalls = Castingcall.all
   end
@@ -8,7 +10,9 @@ class CastingcallsController < ApplicationController
   end
 
   def new
+    @user = curent_user
     @castingcall = Castingcall.new
+    # render plain: params[:castingcall].inspect
   end
   
   def edit
@@ -16,8 +20,9 @@ class CastingcallsController < ApplicationController
   end
 
   def create
-    # render plain: params[:castingcall].inspect
-    @castingcall = Castingcall.new(castingcall_params)
+    @user = curent_user
+    # @castingcall = Castingcall.create(castingcall_params)
+    @castingcall = @user.castingcalls.create(castingcall_params)
     
     if @castingcall.save
       flash[:success] = "Success!<strong> #{@castingcall.title}</strong> has been created!" 
@@ -48,6 +53,11 @@ class CastingcallsController < ApplicationController
   
   private
   def castingcall_params
-    params.require(:castingcall).permit(:title, :description)
+    params.require(:castingcall).permit(:title, :description, :user_id)
   end
+  
+  def curent_user
+    User.find(3)
+  end
+
 end
