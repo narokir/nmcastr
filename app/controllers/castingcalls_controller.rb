@@ -10,7 +10,7 @@ class CastingcallsController < ApplicationController
   end
 
   def new
-    @user = curent_user
+    @user = current_user
     @castingcall = Castingcall.new
     # render plain: params[:castingcall].inspect
   end
@@ -20,7 +20,7 @@ class CastingcallsController < ApplicationController
   end
 
   def create
-    @user = curent_user
+    @user = current_user
     # @castingcall = Castingcall.create(castingcall_params)
     @castingcall = @user.castingcalls.create(castingcall_params)
     
