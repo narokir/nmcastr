@@ -1,8 +1,5 @@
 module ApplicationHelper
-  def user_signed_in?
-      
-  end
-    
+
   def full_title(page_title = '')
     base_title = "Castme.com"
     if page_title.empty?
@@ -25,5 +22,27 @@ module ApplicationHelper
       else
         flash_type.to_s
     end
+  end
+  
+  def devise_error_messages!
+    return "" unless devise_error_messages?
+
+    messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
+    sentence = I18n.t("errors.messages.not_saved",
+                      :count => resource.errors.count,
+                      :resource => resource.class.model_name.human.downcase)
+
+    html = <<-HTML
+    <div class="alert alert-danger">
+      <h3>#{sentence}</h3>
+      <ul>#{messages}</ul>
+    </div>
+    HTML
+
+    html.html_safe
+  end
+
+  def devise_error_messages?
+    !resource.errors.empty?
   end
 end

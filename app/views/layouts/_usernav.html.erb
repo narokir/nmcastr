@@ -25,7 +25,6 @@
 <% else %>
 
   <ul class="nav navbar-nav navbar-right">
-    hello <%= user_session %>
     <!--<i class="material-icons btn navbar-btn btn-default btn-sm">account_circle</i>-->
     <%=link_to "Sign up", new_user_registration_path, class: 'btn btn-primary navbar-btn btn-sm' %>
     <%= link_to "account_circle", new_user_session_path, html_options = {style: "margin-left:5px;", class: 'material-icons btn navbar-btn btn-info btn-sm'} %>

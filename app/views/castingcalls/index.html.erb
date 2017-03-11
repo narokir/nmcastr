@@ -14,7 +14,7 @@
 
         <!--<img class="img-responsive center-block" src="https://placehold.it/1000x500" alt="Responsive image">-->
         <h4 class="card-title"><%= castingcall.title %></h4>
-        <p class='small'> Created by: <%= castingcall.user.name %></p>
+        <p class='small'> Created by: <%= castingcall.user.email %></p>
         <p class="card-text"><%= truncate(castingcall.description, length: 120) %></p>
         <%= link_to "View Details", castingcall_path(castingcall), class: 'btn btn-info btn-sm'  %>
         

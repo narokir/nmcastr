@@ -1,0 +1,32 @@
+<div class="row">
+  
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <%= devise_error_messages! %>
+        <div class="panel-body center-block">
+          
+          <h2>Get Access</h2>
+          <a class="btn btn-lg btn-primary" href="/users/auth/google_oauth2">With Google Account</a>
+          <hr></hr>
+          
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          		<%= f.error_notification %>
+		          <%= devise_error_messages! %>
+		          <%= render 'shared/form_errors', object: f.object %>
+            <div class="form-inputs">
+              <%= f.input :email, required: false, autofocus: true, placeholder: "Email", label: false %>
+              <%= f.input :password, required: false, placeholder: "Password", label: false %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            </div>
+          
+            <div class="form-actions">
+              <%= f.button :submit, "Log in", class: "btn btn-success" %>
+            </div>
+          <% end %>
+          
+        </div>
+        <div class="panel-footer"><%= render "devise/shared/links" %></div>
+      </div>
+    </div>
+
+</div>

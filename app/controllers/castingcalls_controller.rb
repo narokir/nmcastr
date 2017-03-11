@@ -1,5 +1,6 @@
 class CastingcallsController < ApplicationController
   
+  before_action :authenticate_user!, except:[:index, :show ]
   
   def index
     @castingcalls = Castingcall.all
@@ -16,7 +17,7 @@ class CastingcallsController < ApplicationController
   end
   
   def edit
-    @castingcall = Castingcall.find(params[:id])
+    @castingcall = Castingcall.find(current_user)
   end
 
   def create
@@ -33,7 +34,7 @@ class CastingcallsController < ApplicationController
   end
 
   def update
-    @castingcall = Castingcall.find(params[:id])
+    @castingcall = Castingcall.find(current_user)
     
     if @castingcall.update(castingcall_params)
       flash[:success] = "Success! <strong>#{@castingcall.title}</strong> has been Updated"
@@ -54,10 +55,6 @@ class CastingcallsController < ApplicationController
   private
   def castingcall_params
     params.require(:castingcall).permit(:title, :description, :user_id)
-  end
-  
-  def curent_user
-    User.find(3)
   end
 
 end

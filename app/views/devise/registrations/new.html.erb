@@ -1,0 +1,35 @@
+<div class="row">
+
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          
+          <div class="center-block">
+            <h2>Join Castr</h2>
+            <p class="text-muted">I have a Google account...tt</p>
+            <a class="btn btn-lg btn-primary" href="/users/auth/google_oauth2">With Google Account</a>
+          </div>
+          
+          <hr></hr>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render 'shared/form_errors', object: f.object %>
+          
+            <div class="form-inputs">
+              <%= f.input :name, required: true, autofocus: true, label: false, placeholder: 'First Name' %>
+              <%# f.input :surname, required: true, autofocus: true, label: false, placeholder: 'Last Name' %>
+              <%# f.input :phone, required: true, autofocus: true, label: false, placeholder: 'Phone Number' %>
+              <%= f.input :email, required: true, autofocus: true, label: false, placeholder: 'Email' %>
+              <%= f.input :password, required: true, label: false, placeholder: 'Create Password', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+              <%#= f.input :password_confirmation, required: true, label: false, placeholder: 'Password' %>
+            </div>
+          
+            <div class="form-actions">
+              <%= f.button :submit, "Sign up", class: "btn btn-success" %>
+            </div>
+          <% end %>
+          
+        </div>
+        <div class="panel-footer"><%= render "devise/shared/links" %></div>
+      </div>
+    </div>
+</div>

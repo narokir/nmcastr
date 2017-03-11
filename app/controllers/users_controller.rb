@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
   
+  before_action :authenticate_user!, except:[:index, :show ]
+  
   def index
     @users = User.all
   end
 
   def show
-    @user = User.find(current_user)
+    @user = User.find(params[:id])
   end
 
   # def new
@@ -13,7 +15,7 @@ class UsersController < ApplicationController
   # end
 
   def edit
-    @user = User.find(current_user)
+    @user = User.find(params[:id])
   end
 
   # def create
@@ -27,13 +29,13 @@ class UsersController < ApplicationController
   #   end
   # end
 
-  # def update
-  #   @user = User.find(params[:id])
+  def update
+    @user = User.find(params[:id])
     
-  #   @user.update(user_params)
-  #   flash[:success] = "User has been updated"
-  #   redirect_to @user
-  # end
+    @user.update(user_params)
+    flash[:success] = "User has been updated"
+    redirect_to @user
+  end
 
   def destroy
     @user = User.find(current_user)
