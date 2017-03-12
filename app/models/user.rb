@@ -9,6 +9,7 @@ class User < ApplicationRecord
           :rememberable,
           :trackable,
           :validatable
+          # :confirmable
           # :omniauthable,
           # :omniauth_providers => [:google_oauth2]
 end
