@@ -1,4 +1,13 @@
+# env variables for gmail smtps
+# unless Rails.env.production?
+#   ENV['GMAIL_PASSWORD'] = 'smartypants'
+#   ENV['GMAIL_USER'] = 'narokir@gmail.com'
+# end
+
 Rails.application.configure do
+  # GMAIL_USER = Rails.application.secrets.GMAIL_USER
+  # GMAIL_PASSWORD = Rails.application.secrets.GMAIL_PASSWORD
+  
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -27,7 +36,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -58,4 +67,15 @@ Rails.application.configure do
     port: 8080 
   }
   
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.default_options = {from: 'no-reply@narokir.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'mail.google.com',
+    user_name:            ENV["GMAIL_USER"],
+    password:             ENV["GMAIL_PASSWORD"],
+    authentication:       'plain',
+    enable_starttls_auto: true  }
 end
