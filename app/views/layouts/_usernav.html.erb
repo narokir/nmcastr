@@ -5,7 +5,7 @@
         
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <%# image_tag(current_user.profile_img, :alt => "user", :size =>"22", class:"user-menu-thumb") %>
+            <%= image_tag(profile_img, :alt => "user", :size =>"22", class:"user-menu-thumb") %>
             <%= current_user.email %> &nbsp;
             <span>
             <%#= image_tag(current_user.avatar, :alt => "user", :size =>"35", class:"user-menu-thumb") %>

@@ -1,4 +1,14 @@
 module ApplicationHelper
+  
+  
+  def profile_img
+    current_user.profile_img if defined? current_user.profile_img
+    else
+     profile_img = "https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg"
+  end
+  
+  
+  
 
   def full_title(page_title = '')
     base_title = "Castme.com"
