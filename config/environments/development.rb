@@ -1,9 +1,3 @@
-# env variables for gmail smtps
-# unless Rails.env.production?
-#   ENV['GMAIL_PASSWORD'] = 'smartypants'
-#   ENV['GMAIL_USER'] = 'narokir@gmail.com'
-# end
-
 Rails.application.configure do
   # GMAIL_USER = Rails.application.secrets.GMAIL_USER
   # GMAIL_PASSWORD = Rails.application.secrets.GMAIL_PASSWORD
