@@ -6,7 +6,8 @@
         <div class="panel-body center-block">
           
           <h2>Get Access</h2>
-          <a class="btn btn-lg btn-primary" href="/users/auth/google_oauth2">With Google Account</a>
+          <p><%= link_to "Log in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-default", id: "sign_in" %>
+            <%= link_to "Log in with Google", user_google_oauth2_omniauth_authorize_path, class: "btn btn-default" %></p>
           <hr></hr>
           
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

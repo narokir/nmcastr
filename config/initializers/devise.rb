@@ -248,6 +248,24 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+    config.omniauth :google_oauth2, ENV["GOOGLE_ID"], ENV["GOOGLE_SECRET"],
+    { 
+      :client_options => { :ssl => { :verify => !Rails.env.development? } },# This solved the problem with "invalid credentials"
+      :scope => 'email,profile',
+      :prompt => 'select_account',
+      :image_aspect_ratio => 'square',
+      :image_size => 50,
+      # :info_fields =>'email,first_name,last_name'
+    }
+    
+  #Declare Facebook as provider for OmniOath
+  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'],
+    {
+      :scope => 'email,public_profile',
+      :display => 'popup',
+      :image_size => 'square',
+      :info_fields =>'email,first_name,last_name,gender,location'
+    }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
