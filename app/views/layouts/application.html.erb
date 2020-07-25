@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,54 +14,66 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
-    
+<body>
+
     <%= render 'layouts/header' %>
-    
+
     <% if params[:action] == "home" %>
-        <%= render file:'welcome/home' %>
+    <%= render file:'welcome/home' %>
     <% else %>
-      <div id ="spacer"></div>
-      <div class="container">
+    <div id="spacer"></div>
+    <div class="container">
         <%= render 'shared/messages' %>
         <%= yield %>
         <%= render 'layouts/footer' %>
-      </div><!-- /.container -->
+    </div><!-- /.container -->
     <%end%>
-    
-    
+
+
+    <%
+=begin%>
     <%= debug(params) if Rails.env.development? %>
     <% console if Rails.env.development? %>
 
-<table class="table table-bordered table-striped embos">
-    <tr>
-      <td>Request url:</td><td><%= request.url %></td>
-    </tr>
-    <tr>
-      <td>Request fullpath:</td><td><%= request.fullpath %></td>
-    </tr>
-    <tr>
-      <td>Request referer: </td><td><%= request.referer %></td>
-    </tr>
-    <tr>
-      <td>Request ip: </td><td><%= request.ip %></td>
-    </tr>
-    <tr>
-      <td>Request xhr?: </td><td><%= request.xhr? %></td>
-    </tr>
-    <tr>
-      <td>Request header info:</td><td><%= request.headers["User-Agent"] %></td>
-    </tr>
-    <tr>
-      <td>Request Parameters</td><td><%= request.parameters %></td>
-    </tr>
-    <tr>
-      <td><strong>Session</strong></td><td><%= session.inspect %></td>
-    </tr>
-  </table>
+    <table class="table table-bordered table-striped embos">
+        <tr>
+            <td>Request url:</td>
+            <td><%= request.url %></td>
+        </tr>
+        <tr>
+            <td>Request fullpath:</td>
+            <td><%= request.fullpath %></td>
+        </tr>
+        <tr>
+            <td>Request referer: </td>
+            <td><%= request.referer %></td>
+        </tr>
+        <tr>
+            <td>Request ip: </td>
+            <td><%= request.ip %></td>
+        </tr>
+        <tr>
+            <td>Request xhr?: </td>
+            <td><%= request.xhr? %></td>
+        </tr>
+        <tr>
+            <td>Request header info:</td>
+            <td><%= request.headers["User-Agent"] %></td>
+        </tr>
+        <tr>
+            <td>Request Parameters</td>
+            <td><%= request.parameters %></td>
+        </tr>
+        <tr>
+            <td><strong>Session</strong></td>
+            <td><%= session.inspect %></td>
+        </tr>
+    </table>
+    <%
+=end%>
 
-  </body>
+</body>
+
 </html>
-

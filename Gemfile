@@ -7,12 +7,12 @@ end
 
 
 
-gem 'rails', '~> 5.0.2' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 6.0' # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'pg', '~> 0.18' # Use postgresql as the database for Active Record
 gem 'puma', '~> 3.0'# Use Puma as the app server
 gem 'sass-rails', '~> 5.0'# Use SCSS for stylesheets
 gem 'uglifier', '>= 1.3.0' # Use Uglifier as compressor for JavaScript assets
-gem 'coffee-rails', '~> 4.2' # Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '~> 5.0' # Use CoffeeScript for .coffee assets and views
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -25,6 +25,7 @@ gem 'simple_form' #https://github.com/plataformatec/simple_form
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'railties', '~> 6.0', '>= 6.0.3.2'
 
 # gem 'redis', '~> 3.0' # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password

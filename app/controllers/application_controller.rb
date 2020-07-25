@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   before_action :configure_permitted_parameters, if: :devise_controller?
   
-  after_filter :store_action
+  after_action :store_action
   
   def store_action
     return unless request.get? 

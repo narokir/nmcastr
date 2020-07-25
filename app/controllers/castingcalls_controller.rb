@@ -7,6 +7,7 @@ class CastingcallsController < ApplicationController
   end
   
   def show
+    @user = current_user
     @castingcall = Castingcall.find(params[:id])
   end
 
@@ -17,7 +18,8 @@ class CastingcallsController < ApplicationController
   end
   
   def edit
-    @castingcall = Castingcall.find(current_user)
+    # @castingcall = Castingcall.find(current_user)
+    @castingcall = Castingcall.find(params[:id])
   end
 
   def create
@@ -34,7 +36,7 @@ class CastingcallsController < ApplicationController
   end
 
   def update
-    @castingcall = Castingcall.find(current_user)
+    @castingcall = Castingcall.find(params[:id])
     
     if @castingcall.update(castingcall_params)
       flash[:success] = "Success! <strong>#{@castingcall.title}</strong> has been Updated"
