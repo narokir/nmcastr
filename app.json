@@ -2,6 +2,11 @@
   "name": "Ruby on Rails",
   "description": "A template for getting started with the popular Ruby framework.",
   "stack": "heroku-18",
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-dev"
+    }
+  ],
   "scripts": {
     "postdeploy": "bundle exec rake db:create db:migrate"
   }
