@@ -19,4 +19,5 @@ class Castingcall < ApplicationRecord
             errors.add(:main_image, "must be a JPEG or PNG")
         end
     end
+
 end

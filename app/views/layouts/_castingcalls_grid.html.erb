@@ -4,7 +4,7 @@
             <div class="panel-body">
 
 
-                <%= image_tag castingcall.main_image, :class =>'img-responsive center-block', :alt =>'#{castingcall.title}' %>
+                <%= image_tag check_img(castingcall.main_image), :class =>'img-responsive center-block' %>
                 <h4 class="card-title"><%= castingcall.title %></h4>
                 <p class='small'> Created by: <%= link_to castingcall.user.name, castingcall.user	%></p>
                 <p class="card-text"><%= truncate(castingcall.description, length: 120) %></p>
