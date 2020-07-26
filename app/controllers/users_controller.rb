@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(current_user)
+    @user = User.find(current_user.id)
     
     @user.destroy
     flash[:success] = "User has been Destroyed"
