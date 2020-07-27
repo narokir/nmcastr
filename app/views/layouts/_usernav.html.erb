@@ -1,14 +1,14 @@
 <% if user_signed_in? %>
       
       <ul class="nav navbar-nav navbar-right">
-        <%#link_to("Fix this", '' , class: "btn btn-warning btn-sm navbar-btn navbar-right") %>
+        <% #link_to("Fix this", '' , class: "btn btn-warning btn-sm navbar-btn navbar-right") %>
         
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag(profile_img, :alt => "user", :size =>"22", class:"user-menu-thumb") %>
+            <%= image_tag(profile_img, :alt => "user", :size => "22", class: "user-menu-thumb") %>
             <%= current_user.email %> &nbsp;
             <span>
-            <%#= image_tag(current_user.avatar, :alt => "user", :size =>"35", class:"user-menu-thumb") %>
+            <% #= image_tag(current_user.avatar, :alt => "user", :size =>"35", class:"user-menu-thumb") %>
             </span>
             <span class="caret"></span></a>
             
@@ -20,14 +20,14 @@
           </ul>
           
         </li>
-          <%# image_tag(current_user.profile_img, :alt => "user", :size =>"40", class:"user-menu-thumb navbar-right") %>
+          <% # image_tag(current_user.profile_img, :alt => "user", :size =>"40", class:"user-menu-thumb navbar-right") %>
       </ul>
 <% else %>
 
   <ul class="nav navbar-nav navbar-right">
     <!--<i class="material-icons btn navbar-btn btn-default btn-sm">account_circle</i>-->
-    <%=link_to "Sign up", new_user_registration_path, class: 'btn btn-primary navbar-btn btn-sm' %>
-    <%= link_to "Log In", new_user_session_path, html_options = {style: "margin-left:5px;", class: ''} %>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary navbar-btn btn-sm" %>
+    <%= link_to "Log In", new_user_session_path, html_options = { style: "margin-left:5px;", class: "" } %>
   </ul>
   
 <% end %>
