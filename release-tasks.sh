@@ -1,1 +1,1 @@
-rake db:create db:migrate
+rake db:migrate
