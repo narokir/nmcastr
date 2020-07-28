@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
+first:
+  title: First Casting Call
+  description: First Casting Call Description
+  user: user1
 
-two:
-  title: MyString
-  description: MyText
+second:
+  title: Second Casting Call
+  description: Second Casting Call Description
+  user: user2
