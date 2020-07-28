@@ -12,9 +12,8 @@ class CastingcallsController < ApplicationController
   end
 
   def new
-    @user = current_user
-    @castingcall = Castingcall.new
-    # render plain: params[:castingcall].inspect
+    @user = User.find(current_user.id)
+    @castingcall = @user.castingcalls.new
   end
   
   def edit
@@ -56,7 +55,7 @@ class CastingcallsController < ApplicationController
   
   private
   def castingcall_params
-    params.require(:castingcall).permit(:title, :description, :user_id)
+    params.require(:castingcall).permit(:title, :description, :user_id, :main_image)
   end
 
 end

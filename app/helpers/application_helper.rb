@@ -55,4 +55,12 @@ module ApplicationHelper
   def devise_error_messages?
     !resource.errors.empty?
   end
+  
+  def check_img(main_image)
+    if main_image.present?
+      main_image
+    else
+      "https://via.placeholder.com/1500"
+    end
+  end
 end
