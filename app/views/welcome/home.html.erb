@@ -1,13 +1,10 @@
-<div class="jumbotron">
+<div class="jumbotron jumbotron-fluid mb-0">
     <div class="container">
-        <h1>Casting calls. Answer.</h1>
-        <p>Welcome to New Mexico's largest network of background Actors.</p>
+        <h1 class="display-4">Casting calls. Answer.</h1>
+        <p class="lead">Welcome to New Mexico's largest network of background Actors.</p>
         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-danger btn-lg" %>
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <%= render "layouts/castingcalls_grid" %>
-    </div>
-</div>
+
+  <%= render "layouts/castingcalls_grid" %>

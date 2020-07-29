@@ -1,19 +1,19 @@
 /*<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->*/
-@import "ie10-viewport-bug-workaround.css.scss";
+@import 'ie10-viewport-bug-workaround.css.scss';
 
 /*<!-- Customizing Bootsrap Variables for Branding Purposes -->*/
-@import "brand";
+@import 'brand';
 
 /*<!-- Bootstrap -->*/
-@import "bootstrap-sprockets";
-@import "bootstrap";
+// @import 'bootstrap-sprockets';
+@import 'bootstrap';
 
 //==== TMP custom CSS ==========================================================
 
-body{
-  margin-top:50px;
+body {
+  // margin-top: 50px;
 }
 
-div#spacer{
-  height:20px;
+div#spacer {
+  height: 20px;
 }

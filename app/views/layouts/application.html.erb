@@ -9,70 +9,27 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-    <title><%# full_title(yield(:title)) %></title>
-    <%= render 'layouts/shim' %>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= render "layouts/shim" %>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track': "reload" %>
 </head>
 
 <body>
 
-    <%= render 'layouts/header' %>
+    <%= render "layouts/header" %>
 
     <% if params[:action] == "home" %>
-    <%= render file:'welcome/home' %>
+    <%= render file: "welcome/home" %>
     <% else %>
     <div id="spacer"></div>
-    <div class="container">
-        <%= render 'shared/messages' %>
+    <div class="container-fluid mt-3">
+        <%= render "shared/messages" %>
         <%= yield %>
-        <%= render 'layouts/footer' %>
+        <%= render "layouts/footer" %>
     </div><!-- /.container -->
-    <%end%>
-
-
-    <%
-=begin%>
-    <%= debug(params) if Rails.env.development? %>
-    <% console if Rails.env.development? %>
-
-    <table class="table table-bordered table-striped embos">
-        <tr>
-            <td>Request url:</td>
-            <td><%= request.url %></td>
-        </tr>
-        <tr>
-            <td>Request fullpath:</td>
-            <td><%= request.fullpath %></td>
-        </tr>
-        <tr>
-            <td>Request referer: </td>
-            <td><%= request.referer %></td>
-        </tr>
-        <tr>
-            <td>Request ip: </td>
-            <td><%= request.ip %></td>
-        </tr>
-        <tr>
-            <td>Request xhr?: </td>
-            <td><%= request.xhr? %></td>
-        </tr>
-        <tr>
-            <td>Request header info:</td>
-            <td><%= request.headers["User-Agent"] %></td>
-        </tr>
-        <tr>
-            <td>Request Parameters</td>
-            <td><%= request.parameters %></td>
-        </tr>
-        <tr>
-            <td><strong>Session</strong></td>
-            <td><%= session.inspect %></td>
-        </tr>
-    </table>
-    <%
-=end%>
+    <% end %>
 
 </body>
 
