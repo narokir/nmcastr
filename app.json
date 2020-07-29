@@ -2,9 +2,15 @@
   "name": "Ruby on Rails",
   "description": "A template for getting started with the popular Ruby framework.",
   "addons": [
-    "heroku-postgresql"
+    "heroku-postgresql:standard-0"
   ],
+  "environments": {
+    "review": {
+      "addons": [
+        "heroku-postgresql:hobby-dev"
+      ]
+    },
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate"
+    "postdeploy": "bundle exec rake db:seed:replant"
   }
 }
