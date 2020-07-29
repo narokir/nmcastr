@@ -1,1 +1,1 @@
-rake db:create db:migrate
+bin/rails db:seed:replant
