@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "2.7.0"
+ruby "2.7.1"
 gem "rails", "~> 6.0" # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "pg", "~> 0.18" # Use postgresql as the database for Active Record
 gem "puma", "~> 3.0" # Use Puma as the app server
@@ -25,6 +25,7 @@ gem "devise"
 gem "omniauth-facebook"
 gem "omniauth-google-oauth2"
 gem "railties", "~> 6.0", ">= 6.0.3.2"
+gem "faker"
 
 # gem 'redis', '~> 3.0' # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
@@ -42,7 +43,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
-  gem "faker"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
