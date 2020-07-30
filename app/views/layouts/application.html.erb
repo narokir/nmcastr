@@ -24,11 +24,10 @@
     <%= render file: "welcome/home" %>
     <% else %>
     <div id="spacer"></div>
-    <div class="container-fluid mt-3">
+  
         <%= render "shared/messages" %>
         <%= yield %>
         <%= render "layouts/footer" %>
-    </div><!-- /.container -->
     <% end %>
 
 </body>

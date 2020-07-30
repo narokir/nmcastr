@@ -31,14 +31,16 @@ $black: #000 !default;
 //
 // Settings for the `<body>` element.
 $body-bg: $gray-900 !default;
+$body-color: $white !default;
 
 $theme-colors: (
   'primary': darken(#1097ff, 6.5%),
   'danger': hsl(345, 88%, 52%),
   'success': #38ba00,
   'warning': #ff9200,
-  'info': #79c5ff,
+  'info': #59bcf5,
   'action': #e2d23f,
+  'filter': rgba(0, 0, 0, 0.589),
 );
 
 //==============================================================================

@@ -1,20 +1,30 @@
 <% # provide(:title, "New Casing Call") %>
 <% # render "shared/pagename" %>
-<div class="row">
-  <div class="col-md-8">
-      <div class="panel-body">
-        <h2 class=''><%= @castingcall.title %></h2>
-        <%= image_tag check_img(@castingcall.main_image), :class => "card-img-top", :alt => "..." %>
-        <p><%= @castingcall.description %></p>
-        <p class='small'> Posted by: <%= link_to @castingcall.user.name, @castingcall.user %>
-  		  <p><a href="#" class="btn btn-success">Applie</a></p>
+<div class="card bg-dark text-white">
+  <%= image_tag check_img(@castingcall.main_image), :class => "card-img ", :alt => "..." %>
+  <div class="card-img-overlay bg-filter ">
+    <div class="container">
+      <div class="position-absolute fixed-bottom p-5">
+        <h1 class="display-1"><%= @castingcall.title %></h1>
+        <p class="lead"><%= @castingcall.description %></p>
       </div>
-  </div>
-  
-  <div class="col-md-4">
-    	<div class="embed-responsive embed-responsive-4by3">
-    	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.7132691584566!2d-106.61503358507088!3d34.98884618036157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872209361953ae5d%3A0x8621fe389c6805f0!2sAlbuquerque+Studios!5e0!3m2!1sen!2sus!4v1488151595831" width="100%" height="0" frameborder="0" style="border:0" allowfullscreen></iframe>
-    	<!--<img src="https://placehold.it/1200x1500" class="img-responsive" alt="Responsive image">-->
-  		</div>
+    </div>
   </div>
 </div>
+
+<div class="jumbotron jumbotron-fluid" style="background-image: url(<%= url_for(check_img(@castingcall.main_image)) %>); background-size: cover;">
+  <div class="container">
+    <div class="col-lg-10 col-md-10 col-sm-12">
+      <h1 class="display-1 mt-5"><%= @castingcall.title %></h1>
+      <p class="lead"><%= @castingcall.description %></p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+      <p class='small'> Posted by: <%= link_to @castingcall.user.name, @castingcall.user %>
+      <p><a href="#" class="btn btn-success">Applie</a></p>
+  </div>
+</div>
+

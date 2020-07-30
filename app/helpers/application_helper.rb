@@ -1,6 +1,7 @@
 module ApplicationHelper
   require "faker"
 
+
   def profile_img
     # current_user.profile_img if defined? current_user.profile_img
     # else
@@ -9,6 +10,7 @@ module ApplicationHelper
 
   def full_title(page_title = "")
     base_title = "Castme.com"
+
     if page_title.empty?
       base_title
     else
@@ -19,13 +21,13 @@ module ApplicationHelper
   def bootstrap_class_for(flash_type)
     case flash_type
     when "success"
-      "alert-success"   # Green
+      "alert-success"
     when "error"
-      "alert-danger"    # Red
+      "alert-danger"
     when "alert"
-      "alert-warning"   # Yellow
+      "alert-warning"
     when "notice"
-      "alert-info"      # Blue
+      "alert-info"
     else
       flash_type.to_s
     end
@@ -33,19 +35,14 @@ module ApplicationHelper
 
   def devise_error_messages!
     return "" unless devise_error_messages?
-
     messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
-    sentence = I18n.t("errors.messages.not_saved",
-                      :count => resource.errors.count,
-                      :resource => resource.class.model_name.human.downcase)
-
+    sentence = I18n.t("errors.messages.not_saved",     :count => resource.errors.count,     :resource => resource.class.model_name.human.downcase)
     html = <<-HTML
     <div class="alert alert-danger">
       <h3>#{sentence}</h3>
       <ul>#{messages}</ul>
     </div>
-    HTML
-
+HTML
     html.html_safe
   end
 
@@ -58,7 +55,7 @@ module ApplicationHelper
     if main_image.present?
       main_image
     else
-      Faker::LoremPixel.image(size: "900x800", is_gray: false, category: "nature")
+      main_image = "https://via.placeholder.com/700x500"
     end
   end
 end

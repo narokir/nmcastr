@@ -1,25 +1,26 @@
 
-<div class="container mt-3">
+<div class="container-fluid mt-3">
 
-
-  <div class="row">
+  <div class="row equal">
   <% @castingcalls.each do |castingcall| %> 
-    <div class="col-md-6 col-sm-auto col-lg-4">
+    <div class="col-md-6 col-sm-auto col-lg-4 d-flex">
         <div class="card-group">
-          <div class="card mb-3" style="">
+          <div class="card mb-3 bg-dark" >
             <%= image_tag check_img(castingcall.main_image), :class => "card-img-top", :alt => "..." %>
-            <div class="card-body">
+            <div class="card-img-overlay bg-filter">
               <h5 class="card-title"><%= castingcall.title %></h5>
               <p class="card-text"><%= truncate(castingcall.description, length: 120) %></p>
-          </div>
-          <div class="card-footer">
-            <%= link_to "View Details", castingcall_path(castingcall), class: "btn btn-info btn-sm" %>
-            <span class="small">
-              <%= link_to "Show", castingcall_path(castingcall) %> |
-              <%= link_to "Edit", edit_castingcall_path(castingcall) %> |
-              <%= link_to "Delete", castingcall_path(castingcall), method: :delete, data: { confirm: "Are you sure?" } %>
-            </span>
-          </div>
+              <p class="card-text">
+              <%= link_to "View Details", castingcall_path(castingcall), class: "btn btn-info btn-sm" %>
+              </p>
+              <p class="card-text">
+                <span class="small">
+                  <%= link_to "Show", castingcall_path(castingcall) %> |
+                  <%= link_to "Edit", edit_castingcall_path(castingcall) %> |
+                  <%= link_to "Delete", castingcall_path(castingcall), method: :delete, data: { confirm: "Are you sure?" } %>
+                </span>
+              </p>
+            </div>
         </div>
       </div>
     </div>
