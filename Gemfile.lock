@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/puma/puma.git
+  revision: 0f718d516b92cd8bc4120c543b06792b22ac20bb
+  specs:
+    puma (5.0.0.beta1)
+      nio4r (~> 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -56,7 +63,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
-    autoprefixer-rails (9.8.5)
+    autoprefixer-rails (9.8.6)
       execjs
     bcrypt (3.1.15)
     bindex (0.8.1)
@@ -88,6 +95,8 @@ GEM
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.13.1)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hashie (4.1.0)
@@ -115,6 +124,7 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.1)
+    model_probe (1.0.7)
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
@@ -142,7 +152,6 @@ GEM
     orm_adapter (0.5.0)
     pg (0.21.0)
     popper_js (1.16.0)
-    puma (3.12.6)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -243,13 +252,15 @@ DEPENDENCIES
   coffee-rails (~> 5.0)
   devise
   faker
+  figaro
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  model_probe
   omniauth-facebook
   omniauth-google-oauth2
   pg (~> 0.18)
-  puma (~> 3.0)
+  puma!
   rails (~> 6.0)
   railties (~> 6.0, >= 6.0.3.2)
   sass-rails (~> 5.0)

@@ -5,7 +5,7 @@ class CastingcallsController < ApplicationController
   def index
     @castingcalls = Castingcall.all
   end
-  
+
   def show
     @user = current_user
     @castingcall = Castingcall.find(params[:id])

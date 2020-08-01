@@ -1,4 +1,9 @@
 {
-    "emmet.showSuggestionsAsSnippets": true,
-    "emmet.triggerExpansionOnTab": true
+	"emmet.showSuggestionsAsSnippets": true,
+	"emmet.triggerExpansionOnTab": true,
+	"vscode-erb-beautify.tab": true,
+	"ruby.format": "standard",
+	"ruby.intellisense": "rubyLocate",
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true
 }

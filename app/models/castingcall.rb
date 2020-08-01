@@ -1,9 +1,8 @@
 class Castingcall < ApplicationRecord
   belongs_to :user
-  validates :title,   presence: true
-  validates :description,   presence: true
-
-    #https://pragmaticstudio.com/tutorials/using-active-storage-in-rails
+  validates :title, presence: true
+  validates :description, presence: true
+  #  https://pragmaticstudio.com/tutorials/using-active-storage-in-rails
   has_one_attached :main_image
   validate :acceptable_image
 

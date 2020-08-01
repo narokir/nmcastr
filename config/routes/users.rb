@@ -1,0 +1,4 @@
+Rails.application.routes.draw do
+  devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }, :path_prefix => "accounts"
+  resources :users, :only => [:show]
+end
